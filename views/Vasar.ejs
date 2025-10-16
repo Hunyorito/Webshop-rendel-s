@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vásárlás</title>
+</head>
+<body>
+ <h1>Vásárlás</h1>
+ <div style="color: red;">
+   <% if (error && errors.length ) { %>
+     <ul>
+       <% errors.forEach(error => { %>
+         <li><%= error %></li>
+       <% }) %>
+     </ul>
+   <% } %>
+ </div>
+ <form action="/vasar" method="POST">
+   <input type="hidden" name="termek" value="<%= termek %>">
+   <label for="nev">Név:</label>
+   <input type="text" id="nev" name="nev" value="<%= nev %>"><br><br>
+   <label for="szallitas">Szállítási cím:</label>
+   <input type="text" id="szallitas" name="szallitas" value="<%= szallitas %>"><br><br>
+   <label for="szamla">Számlázási cím:</label>
+   <input type="text" id="szamla" name="szamla" value="<%= szamla %>"><br><br>
+   <button type="submit">Megrendelés</button>
+</form>
+</body>
+</html>
